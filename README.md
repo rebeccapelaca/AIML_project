@@ -1,5 +1,8 @@
 # AIML_project_dataset
 
+The first three types of datasets are generated starting from the *cartoon* domain of the *PACS* database, the fourth is the result of the union of all PACS domains and for the last one the *clipart* category of the *DomainNet* database is used.<br>
+The *scripts* folder contains the python scripts used for the generation of the datasets whereas in the *csv_file* there is the list of all the semantic quaterne created for the fifth dataset.
+
 * **dataset_1**<br><img src="./img/dataset_1.PNG" width="300" height="300" align='left'/>
 	Each set contains three identical images and the same image with different colors.
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
