@@ -1,0 +1,9 @@
+rocking chair,chair,chair,chair
+sunbed,chair,chair,chair
+high chair,chair,chair,chair,
+office chair,chair,chair,chair
+mermaid,angel,angel,angel
+angel,mermaid,mermaid,mermaid
+bitten_apple,whole_apple,whole_apple,whole_apple
+tree_no_leaf,tree,tree,tree
+flying_saucer,airplane,helicopter,airplane
