@@ -13,17 +13,17 @@ from PIL import Image
 
 
 
-dataset = '/home/rebecca/Desktop/ML_project/semantic_dataset'
-clipart_path = '/home/rebecca/Desktop/ML_project/clipart'
+dataset = '/home/rebecca/Desktop/AIML_working_area/dataset'
+clipart_path = '/home/rebecca/Desktop/AIML_semantic_dataset/clipart'
 
 # set con più elementi dalla stessa cartella
 #   csv_quaterne_same_folder.txt
 
 # set solo con elementi di cartelle diverse 
 #  csv_quaterne.txt
-quad_file = 'C:\\Users\\Marianna\\Desktop\\csv_quaterne_same_folder.txt'
+quad_file = '/home/rebecca/Desktop/AIML_semantic_dataset/csv_files/csv_quaterne_same_folder.txt'
 
-same_folder = False     # da mettere a True se più elementi vengono presi dalla stessa cartella
+same_folder = True     # da mettere a True se più elementi vengono presi dalla stessa cartella
 file =  open(quad_file)
 
 count1 = 0
@@ -34,10 +34,10 @@ count4 = 0
 # creo la cartella per i risultati. Creo anche le quattro sottocartelle
 if not os.path.exists(dataset):
     os.mkdir(dataset)
-    os.mkdir(dataset+"\\1")
-    os.mkdir(dataset+"\\2")
-    os.mkdir(dataset+"\\3")
-    os.mkdir(dataset+"\\4")
+    os.mkdir(dataset+"/1")
+    os.mkdir(dataset+"/2")
+    os.mkdir(dataset+"/3")
+    os.mkdir(dataset+"/4")
     
 for line in file.readlines():
     
@@ -51,7 +51,7 @@ for line in file.readlines():
     second_path = clipart_path + '/' + row[2].rstrip('\n')
     third_path = clipart_path + '/' + row[3].rstrip('\n')
 
-    num = range(32)    
+    num = range(64)    
         
     for n in num:
         
@@ -71,7 +71,7 @@ for line in file.readlines():
         im3 = Image.open(third_path + '/img_' + str(num3) + '.jpg')
         odd = Image.open(odd_path + '/img_' + str(odd_num) + '.jpg')
            
-        if n < 8:
+        if n < 16:
             count1 = len(os.listdir(dataset+'/1')) + 1
             label_path = dataset+'/1/'+str(count1)
                         
@@ -83,7 +83,7 @@ for line in file.readlines():
             im2.save(label_path+'/3.jpg')
             im3.save(label_path+'/4.jpg')
         
-        if n >= 8 and n < 16:
+        if n >= 16 and n < 32:
             count2 = len(os.listdir(dataset+'/2'))  + 1
             label_path = dataset+'/2/'+str(count2)
                         
@@ -95,7 +95,7 @@ for line in file.readlines():
             im2.save(label_path+'/3.jpg')
             im3.save(label_path+'/4.jpg')
         
-        if n >= 16 and n < 24:
+        if n >= 32 and n < 48:
             count3 = len(os.listdir(dataset+'/3'))  + 1
             label_path = dataset+'/3/'+str(count3)
                         
@@ -107,7 +107,7 @@ for line in file.readlines():
             odd.save(label_path+'/3.jpg')
             im3.save(label_path+'/4.jpg')
             
-        if n >= 24:
+        if n >= 48:
             count4 = len(os.listdir(dataset+'/4')) + 1
             label_path = dataset+'/4/'+str(count4)
                         
